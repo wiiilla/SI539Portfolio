@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <title>Willa Hua</title>
+
+    <meta name='description' content='Personal Website of Willa Hua, including data visualization portfolio and contact information'>
+    <meta name='author' content='Willa Hua'>
+    <meta name='keywords' content='portfolio, Willa Hua, wiiilla, #wiiilla, University of Michigan, Stamps School of Art and Design, design, data visualization, data journalism, UMSI, School of Information'>
+
+    <!-- CSS -->
+    <!-- Custom CSS ––––––––––––––––––––––––––– -->
+    <link href='css/style.css' rel='stylesheet'>
+    <!-- Custom Fonts ––––––––––––––––––––––––––– -->
+
+
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <!-- Custom Scripts -->
+
+    <!-- Favicons -->
+    <link rel='shortcut icon' href='img/favicon.png'>
+
+    <!-- Font Awesome Icons -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+</head>
+
+<body>
+    <a class='skip' href='#skip'>Jump to Content</a>
+    <header>
+        <nav class='topnav' id='myTopnav'>
+            <a href='index.html' class='active'>Home</a>
+            <a href='portfolio.html'>Portfolio</a>
+            <a href='doodles.html'>Doodles</a>
+            <a href='contact.html'>Contact</a>
+            <a href='javascript:void(0);' class='icon' onclick='expand_nav()'>
+                <i class='fa fa-bars'></i>
+            </a>
+        </nav>
+    </header>
+
+    <main id='skip'>
+        <div id='index_text'>
+            <h1>Willa Hua</h1>
+            <h3>Glad you found me here.</h3>
+            <p>I learn fast, finishing one Master's and two Bachelor's in 5 years and now stepping into the job market.</p>
+            <p>As an analyst, I take ownership of my business problem-solving, from developing requirements to delivering solutions.
+            </p>
+            <p>I extract and analyze transactional and operational data with Python, R, and SQL. I communicate insights through crafted presentations, supplemented by 2 years of Tableau experience. </p>
+            <p>I'm a visualization enthusiast who firmly believes in "Show, not Tell," with a versatile skill set in Business Intelligence, Data Mining and Modeling, Front-end development and Graphic Design. I'm open for opportunities in technology, consulting
+                and related fields in 2021.
+            </p>
+        </div>
+
+        <div class="cover">
+            <img src='img/coverData.png' data-speed="0.75" class="img-parallax">
+            <h2>Data</h2>
+        </div>
+        <div class="cover">
+            <img src='img/coverDesign.jpg' data-speed="0.75" class="img-parallax">
+            <h2>Design</h2>
+        </div>
+        <div class="cover">
+            <img src='img/coverInteractives.png' data-speed="0.75" class="img-parallax">
+            <h2>Interactives</h2>
+        </div>
+        <div class="cover">
+            <img src='img/coverIllustration.jpg' data-speed="0.75" class="img-parallax">
+            <h2>Illustration</h2>
+        </div>
+
+        <div id="footer_placeholder">
+            <p>Blah Blah</p>
+        </div>
+
+    </main>
+    <footer>
+        <div>
+            <p>Copyright © 2020 Willa Hua</p>
+        </div>
+    </footer>
+
+    <script>
+        // Parallax Image
+        $('.img-parallax').each(function() {
+            var img = $(this);
+            var imgParent = $(this).parent();
+
+            function parallaxImg() {
+                var speed = img.data('speed');
+                var imgY = imgParent.offset().top;
+                var winY = $(this).scrollTop();
+                var winH = $(this).height();
+                var parentH = imgParent.innerHeight();
+
+                // The next pixel to show on screen      
+                var winBottom = winY + winH;
+
+                // If block is shown on screen
+                if (winBottom > imgY && winY < imgY + parentH) {
+                    // Number of pixels shown after block appear
+                    var imgBottom = ((winBottom - imgY) * speed);
+                    // Max number of pixels until block disappear
+                    var imgTop = winH + parentH;
+                    // Porcentage between start showing until disappearing
+                    var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+                }
+                img.css({
+                    top: imgPercent + '%',
+                    transform: 'translate(-50%, -' + imgPercent + '%)'
+                });
+            }
+            $(document).on({
+                scroll: function() {
+                    parallaxImg();
+                },
+                ready: function() {
+                    parallaxImg();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
