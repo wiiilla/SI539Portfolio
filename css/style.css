@@ -328,6 +328,17 @@ input[type=submit]:hover {
 
 /* Tablet View */
 @media screen and (max-width: 768px) {
+	/* Nav bar */
+	.topnav a {
+		float: left;
+		width: 25%;
+		padding: 14px 16px;
+	}
+
+	.topnav a.active {
+		background-color: #29275A;
+		text-decoration: underline;
+	}
 
 	/* Doodle Grid */
 	#doodle_grid {
@@ -360,12 +371,17 @@ input[type=submit]:hover {
 		line-height: 25vh;
 		vertical-align: top;
 	}
+
 	#contact_form {
 		margin: 10px;
 	}
-	input, textarea, label{
+
+	input,
+	textarea,
+	label {
 		width: 100%;
 	}
+
 	label {
 		padding: 12px 0px 0px 0px;
 	}
@@ -388,6 +404,11 @@ input[type=submit]:hover {
 
 /* Mobile view */
 @media screen and (max-width: 480px) {
+	/* Nav bar */
+	.topnav a {
+		width: auto;
+	}
+	
 	.topnav a:not(:first-child) {
 		display: none;
 	}
