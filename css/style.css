@@ -284,6 +284,17 @@ a.skip:focus {
 	text-transform: uppercase;
 }
 
+.floating {
+	position: relative;
+	animation: floating 2s infinite;
+}
+
+@keyframes floating {
+  0%   {top: 3px;}
+  55%  {top: -3px;}
+  100% {top: 3px;}
+}
+
 /* Contact Form */
 #contact_form {
 	margin: 30px 0 20px 10%;
@@ -553,5 +564,9 @@ input[type=submit]:hover {
 
 	.flip-card {
 		display: none;
+	}
+
+	.floating {
+		animation: none;
 	}
 }

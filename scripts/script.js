@@ -7,37 +7,3 @@ function expand_nav() {
         x.className = "topnav";
     }
 }
-
-// function stop_flip(x) {
-//     var l = document.getElementById("doodle_grid_large");
-//     console.log(x.matches);
-//     if (x.matches) {
-//         // Use simple image
-//         l.innerHTML = "<img src='img/doodles/Doodle4.jpg' , alt='Doodle 2'>"
-//     } else {
-//         // Use flip card
-//         l.innerHTML = `
-//                 <div class="flip-card-inner">
-//                     <div class="flip-card-front">
-//                         <img src='img/doodles/Doodle4.jpg' , alt='Doodle 1'>
-//                     </div>
-//                     <div class="flip-card-back">
-//                         <div class='flip-card-text'>
-//                             <h2>Here are my casual doodles :)</h2>
-//                             <p>see more on instagram:</p>
-//                             <p>wiiilla</p>
-//                         </div>
-//                     </div>
-//                 </div>
-//         `
-//     }
-// }
-
-// var y = window.matchMedia("(max-width: 768px)")
-// stop_flip(y) // Call listener function at run time
-// y.addEventListener("change", stop_flip) // Attach listener function on state changes
-
-// var z = window.matchMedia("(prefers-reduced-motion: no-preference)")
-// z.matches = !z.matches;
-// stop_flip(z)
-// z.addEventListener("change", (x) => { x.matches = !x.matches; stop_flip(x); })
