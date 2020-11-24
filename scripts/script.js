@@ -28,7 +28,7 @@ function stop_flip(x) {
                         </div>
                     </div>
                 </div>
-                `
+        `
     }
 }
 
