@@ -270,6 +270,9 @@ a.skip:focus {
 	height: 100%;
 }
 
+#flip-card-alt {
+	display: none;
+}
 
 /* Contact */
 #contact_text {
@@ -416,6 +419,14 @@ input[type=submit]:hover {
 		column-gap: 10px;
 	}
 
+	#flip-card-alt {
+		display: block;
+	}
+
+	.flip-card {
+		display: none;
+	}
+
 	/* Home Page */
 	#index_text {
 		margin: 20px 10px 20px 10px;
@@ -534,5 +545,13 @@ input[type=submit]:hover {
 @media (prefers-reduced-motion: reduce) {
 	.overlay {
 		transition: none;
+	}
+
+	#flip-card-alt {
+		display: block;
+	}
+
+	.flip-card {
+		display: none;
 	}
 }
