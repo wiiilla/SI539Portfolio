@@ -5,7 +5,7 @@
 /* Navigation */
 .topnav {
 	overflow: hidden;
-	background-color: #C89FA3;
+	background-color: #A6646A;
 }
 
 .topnav a {
@@ -157,7 +157,7 @@ a.skip:focus {
 	font-size: 5vw;
 	font-family: Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
-	color: #999;
+	color: #666;
 	font-weight: lighter;
 	mix-blend-mode: multiply;
 }
