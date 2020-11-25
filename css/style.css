@@ -52,9 +52,9 @@ h3 {
 }
 
 h1 {
-	font-size: 72px;
-	line-height: 1em;
-	margin: 0;
+	font-size: 4em;
+	line-height: 1.1em;
+	margin: 16px 0px 0px 0px;
 }
 
 h3 {
@@ -443,17 +443,13 @@ input[type=submit]:hover {
 		margin: 20px 10px 20px 10px;
 	}
 
-	#index_text h1 {
+	h1 {
 		font-size: 24px;
 	}
 
 	/* Contact Page */
 	#contact_text {
 		margin: 10px;
-	}
-
-	#contact_text h1 {
-		font-size: 24px;
 	}
 
 	div+label {
