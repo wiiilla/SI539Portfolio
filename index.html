@@ -60,7 +60,75 @@
 
     <main id='skip'>
         <div id='index_text'>
-            <h1>Willa Hua</h1>
+            <h1 id="animated-bio">I'm
+                <span class="txt-rotate" data-period="500" data-rotate='["Boshu", "Willa Hua."]'>
+                </span>
+                <script>
+                    var TxtRotate = function(el, toRotate, period) {
+                        this.toRotate = toRotate;
+                        this.el = el;
+                        this.loopNum = 0;
+                        this.mapLoopNum = 2;
+                        this.period = parseInt(period, 10) || 1800;
+                        this.txt = '';
+                        this.tick();
+                        this.isDeleting = false;
+                    };
+
+                    TxtRotate.prototype.tick = function() {
+                        if (this.loopNum < this.mapLoopNum) {
+                            var i = this.loopNum % this.toRotate.length;
+                            var fullTxt = this.toRotate[i];
+
+                            if (this.isDeleting) {
+                                this.txt = fullTxt.substring(0, this.txt.length - 1);
+                            } else {
+                                this.txt = fullTxt.substring(0, this.txt.length + 1);
+                            }
+
+                            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+                            var that = this;
+                            var delta = 100 - Math.random() * 50;
+
+                            if (this.isDeleting) {
+                                delta /= 2;
+                            }
+
+                            if (!this.isDeleting && this.txt === 'Boshu') {
+                                delta = this.period;
+                                this.isDeleting = true;
+                            } else if (this.isDeleting && this.txt === '') {
+                                this.isDeleting = false;
+                                this.loopNum++;
+                                delta = 10;
+                            }
+
+                            setTimeout(function() {
+                                that.tick();
+                            }, delta);
+                        }
+                    };
+
+                    function roll() {
+                        var elements = document.getElementsByClassName('txt-rotate');
+                        for (var i = 0; i < elements.length; i++) {
+                            var toRotate = elements[i].getAttribute('data-rotate');
+                            var period = elements[i].getAttribute('data-period');
+                            if (toRotate) {
+                                new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                            }
+                        }
+                        // INJECT CSS
+                        // var css = document.createElement("style");
+                        // css.type = "text/css";
+                        // css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+                        // document.body.appendChild(css);
+                    };
+                    window.onload = setTimeout(roll, 1000)
+                </script>
+            </h1>
+            <h1 id = "static-bio">I'm Willa Hua</h1>
             <h2>Glad you found me here.</h2>
             <p>I learn fast, finishing one Master's and two Bachelor's in 5 years and now stepping into the job market.</p>
             <p>As an analyst, I take ownership of my business problem-solving, from developing requirements to delivering solutions.
@@ -102,7 +170,6 @@
     <script>
         // Parallax Image
         var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-        console.log(mq.matches)
         $('.img-parallax').each(function() {
             var img = $(this);
             var imgParent = $(this).parent();

@@ -173,6 +173,20 @@ a.skip:focus {
 	pointer-events: none
 }
 
+#animated-bio{
+    animation: hide 2s both;
+    animation-iteration-count: 1;
+}
+@keyframes hide {
+    0%   {opacity: 0;}
+    50%   {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+#static-bio {
+	display: None;
+}
+
 /* Doodle Grid */
 #doodle_grid {
 	display: grid;
@@ -565,4 +579,13 @@ input[type=submit]:hover {
 	.floating {
 		animation: none;
 	}
+
+	#static-bio {
+		display: block;
+	}
+
+	#animated-bio{
+		display: none;
+	}
 }
+
